@@ -43,7 +43,7 @@ execution: `./nameofthescript`
 ### |Man Page:
 execution: `man ./man_3_printf`
 
-![image](https://user-images.githubusercontent.com/113889290/201114945-98ab7784-5a04-4457-bf88-ee65c20b48e0.png)
+![image]()
 
 ## 🗓ORGANISATION:
 
