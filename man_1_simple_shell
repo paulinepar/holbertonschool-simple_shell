@@ -1,0 +1,59 @@
+.TH man 1 "02 december 2022" "1.0" "Holberton Simple Shell Project"
+.SH NAME
+simple_shell: command line interpreter
+
+.SH SYNOPSIS
+.B simple_shell
+[command_string [arg...][file]]
+
+.SH COPYRIGHT
+Public Domain, no copyright protection
+
+.SH DESCRIPTION
+.B simple_shell
+is a command line interpreter that reads and implements basic commands from user input as a shell would.
+
+.SH USER INPUT
+Once a user inputs a command and hits enter, the shell performs the following actions:
+
+1. Splits the command into an array of words.
+
+2. Looks for the command.
+
+3. Executes the command.
+
+.SH SEARCH FOR COMMAND
+When locating a command, the shell looks for a built-in command by that name.
+If a built-in command is not found, the shell searches for the command in the PATH.
+
+.SH EXECUTE COMMAND
+Commands are executed in a child process of the main process.
+
+.SH BUILTINS
+.IP exit
+Exits the simple_shell.
+.SH AUTHORS
+This man page was written by :
+
+ Pauline <>
+ Mohamed <>
+ Marine <>
+
+.SH SEE ALSO
+.BR man
+.BR sh
+.SH REPORTING BUGS
+Try again our
+.B simple_shell
+is perfect.
+
+If you have any other problem do not hesitate to use the
+.B real shell
+!
+.SH DEDICATION
+
+A word for our amazing collaborator
+.B GITHUB: Love you forever Bro!
+
+Thanks also to all the holbies who support us in the best and the worst days!
+.B XOXO
