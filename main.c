@@ -118,17 +118,23 @@ int main(void)
 	/** for the brave try to make another function here */
 	while (1)
 	{
-		printf("$ ");
+		if (isatty(STDIN_FILENO))
+			printf("$ ");
 		getline(&buffer, &bufsize, stdin);
 		/**i reduced the code here instead of 2 if
 		 *i used if ( 1st condition or 2nd condition)*/
-		if (feof(stdin) || strcmp(buffer, "exit\n") == 0)
+		if (feof(stdin))
 		{
-			printf("exit\n");
-			break;
+		/*	printf("\n");*/
+			return (0);
 		}
-		execute_funk(token_creator(buffer));
+		if (strcmp(buffer, "exit\n") == 0)
+		{
+			printf("%s", buffer);
+			exit(1);
+		}
 
+		execute_funk(token_creator(buffer));
 	}
 	free(buffer);
 	return (0);
