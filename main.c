@@ -30,7 +30,6 @@ char **token_creator(char *bufCommand, char **argv)
 	int i, j;
 
 	i = 0;
-	// Free pointers that are in argv here please before everything 
 
 	token = strtok(bufCommand, " \n");
 	while (token != NULL)
@@ -60,12 +59,6 @@ char **token_creator(char *bufCommand, char **argv)
 void execute_funk(char **argv, char **argenv)
 {
 	pid_t child;
-	/*char *argenv[] = {"Home=/root",
-	  "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-	  "TZ=America/Los_Angeles",
-	  "_=/usr/bin/env",
-	  NULL
-	  };*/
 
 	child = fork();
 	if (child == -1)
@@ -76,7 +69,6 @@ void execute_funk(char **argv, char **argenv)
 
 	if (child == 0)
 	{
-		// [TODO] Please handle the case where the user press enter without typing anything, it should not execve, and just exit without any error, just add an if condition before excecve if there is nothing
 
 		execve(argv[0], argv, argenv);
 		/**
@@ -141,11 +133,13 @@ int main(int argc, char **argv, char **envp)
 			printf("%s", buffer);
 			break;
 		}
+		// [TODO] Please handle the case where the user press enter without typing anything, it should not execve, and just exit without any error, just add an if condition before excecve if there is nothing
+
 		if (strcmp(buffer, "\n") != 0)
 			execute_funk(token_creator(buffer, argv), envp);
 	}
 	free(buffer);
-	// Free pointers that are in argv here please
+	// Free pointers that are in argv here please, freeing a empty pointer is creating an ERROR SUMMARY it's why we don't restart/free it in the token_creator function
 	free(argv);
 
 
