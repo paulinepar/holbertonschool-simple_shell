@@ -109,6 +109,7 @@ int main(int argc, char **argv, char **envp)
 	char *buffer = NULL;
 	size_t bufsize = 1024;
 
+	(void)argc;
 	argv = malloc(sizeof(char *) * 1024);
 	if (argv == NULL)
 	{
