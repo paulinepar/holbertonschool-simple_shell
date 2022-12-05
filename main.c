@@ -12,7 +12,7 @@
  * Return: array of pointers
  */
 
-char **token_creator(char *bufCommand)
+char **token_creator(char *bufCommand, char **argv)
 {
 	/** argument is of type char * : because it will take the buffer and the buffer is of this type
 	 * Note: I changed the type of argv “look below” from
@@ -26,14 +26,11 @@ char **token_creator(char *bufCommand)
 	 * i saw that i havent allocated a space for my new array
 	 * so i used malloc to solve the issue
 	 */
-	char *token;
-	char **argv;
-	int i;
+	char *token = NULL;
+	int i, j;
 
-	argv = NULL;
-
-	argv = malloc(sizeof(char *) * 1024);
 	i = 0;
+	// Free pointers that are in argv here please before everything 
 
 	token = strtok(bufCommand, " \n");
 	while (token != NULL)
@@ -46,7 +43,7 @@ char **token_creator(char *bufCommand)
 		 * /bin/ls works by itself
 		 * but i lost access to my second pointer in the array **argv
 		 * because when i executed "printf("%s\n", argv[1]);" i got segmentation fault
-		 * assignment for today allow access to argv[i];;
+		 * assignment for today allow access to argv[i];
 		 */
 		token = strtok(NULL, " \n");
 		i++;
@@ -60,15 +57,15 @@ char **token_creator(char *bufCommand)
  * Description: a function that forks and execite
  * Return: i still dont know
  */
-void execute_funk(char **argv)
+void execute_funk(char **argv, char **argenv)
 {
 	pid_t child;
-	char *argenv[] = {"Home=/root",
-		"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-		"TZ=America/Los_Angeles",
-		"_=/usr/bin/env",
-		NULL
-	};
+	/*char *argenv[] = {"Home=/root",
+	  "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+	  "TZ=America/Los_Angeles",
+	  "_=/usr/bin/env",
+	  NULL
+	  };*/
 
 	child = fork();
 	if (child == -1)
@@ -79,6 +76,8 @@ void execute_funk(char **argv)
 
 	if (child == 0)
 	{
+		// [TODO] Please handle the case where the user press enter without typing anything, it should not execve, and just exit without any error, just add an if condition before excecve if there is nothing
+
 		execve(argv[0], argv, argenv);
 		/**
 		 * i added this part in order to printout
@@ -103,16 +102,24 @@ void execute_funk(char **argv)
  * Description: it will keep accepting input from buffer
  * Return: 0 upon sucess
  */
-int main(void)
+int main(int argc, char **argv, char **envp)
 {
-	char *buffer;
+	int j = 0;
+	char *buffer = NULL;
 	size_t bufsize = 1024;
 
+	argv = malloc(sizeof(char *) * 1024);
+	if (argv == NULL)
+	{
+		perror("Unable to allocate buffer");
+		exit(1);
+	}
 	buffer = malloc(bufsize * sizeof(char));
 	if (buffer == NULL)
 	{
 		perror("Unable to allocate buffer");
 		free(buffer);
+		free(argv);
 		exit(1);
 	}
 	/** for the brave try to make another function here */
@@ -125,18 +132,23 @@ int main(void)
 		 *i used if ( 1st condition or 2nd condition)*/
 		if (feof(stdin))
 		{
-		/*	printf("\n");*/
-			return (0);
+			if (isatty(STDIN_FILENO))
+				printf("\n");
+			break;
 		}
 		if (strcmp(buffer, "exit\n") == 0)
 		{
 			printf("%s", buffer);
-			exit(1);
+			break;
 		}
-
-		execute_funk(token_creator(buffer));
+		if (strcmp(buffer, "\n") != 0)
+			execute_funk(token_creator(buffer, argv), envp);
 	}
 	free(buffer);
+	// Free pointers that are in argv here please
+	free(argv);
+
+
 	return (0);
 }
 
