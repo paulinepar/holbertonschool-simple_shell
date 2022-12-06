@@ -27,7 +27,10 @@ void execute_funk(char **argv, char **argenv)
 	if (child == 0)
 	{
 
-		//if (!(execve(argv[0], argv, argenv)));
+		/**
+		 * momo: i changed this because it created trailing statements errors
+		 * if (!(execve(argv[0], argv, argenv)));
+		 */
 		execve(argv[0], argv, argenv);
 		/**
 		 * i added this part in order to printout
