@@ -8,7 +8,7 @@
 /**
  * main - function
  * @argc: the number of argument passed => argc is not used
- * @argv: an array of all the argument passed
+ * @argv: an arriay of all the argument passed
  * @envp: the current environment
  *
  * Description: it will keep accepting input from buffer
@@ -48,12 +48,11 @@ int main(int argc, char **argv, char **envp)
 		if (strcmp(buffer, "exit\n") == 0 ||
 				(strlen(buffer) == 2 && buffer[0] == ' '))
 				{
-			/*printf("%s", buffer);*/
 			break;
 		}
 		if (strcmp(buffer, "\n") != 0)
 			execute_funk(token_creator(buffer, argv), envp);
-	}
+		}
 	free(buffer);
 	free(argv);
 	return (0);
