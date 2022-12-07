@@ -13,20 +13,40 @@
  * Description: it get the absolute path of a function
  * Return: the path of a function
  */
-
-char *getpath(char **argv)
+char *getpath(char **bufCommand, char **argv)
 {
 	char *path = NULL;
+	char *token = NULL;
+	char *env = NULL;
 	struct stat st;
-
-	path = malloc(sizeof(char) * 1024);
+	
+	path = calloc(sizeof(char), 1024);
 	if (path == NULL)
-		free(path);
-	strcpy(path, "/bin/");
-	strcat(path, argv[0]);
+		exit(0);
 
-	if (stat(path, &st) != 0)
-		return (argv[0]);
-	return (path);
+	env = strdup(getenv("PATH"));
+	token = strtok(env, ":");
+	while (token)
+	{
+		// putting one of the pathes in the path
+		strcpy(path, token);
+		// adding slash for creating a new path
+		strcat(path, "/");
+		// here it's ls
+		strcat(path, bufCommand[0]);
+
+		if (stat(path, &st) == 0)
+		{
+			free(env);
+			bufCommand[0] = path;
+			return path;
+		}
+
+		token = strtok(NULL, ":");
+	}
+
+	free(path);
+	free(env);
+	return (NULL);
 }
 

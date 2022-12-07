@@ -16,24 +16,23 @@
 char **token_creator(char *bufCommand, char **argv)
 {
 	char *token = NULL;
+	char *cmd = NULL;
 	int i;
 
 	i = 0;
 
-	token = strtok(bufCommand, " \n");
+	token = strtok(bufCommand, "\n ");
+	if (token == NULL)
+		return (NULL);
 	while (token != NULL)
 	{
-		if (strlen(token) > 0)
-		{
-			argv[i] = token;
-			i++;
-		}
+		argv[i] = strtok(token, " ");
 		token = strtok(NULL, " \n");
 	}
-	argv[i] = NULL;
+	bufCommand = argv[0];
 
-	if (argv[0][0] != '/' && argv[0][0] != '.')
-		argv[0] = getpath(argv);
+	cmd = getpath(&bufCommand, argv);
+	argv[0] = cmd == NULL ? strdup(argv[0]) : cmd;
 	return (argv);
 }
 
