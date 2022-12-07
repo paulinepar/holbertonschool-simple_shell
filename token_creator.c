@@ -31,7 +31,7 @@ char **token_creator(char *bufCommand, char **argv)
 	}
 	bufCommand = argv[0];
 
-	cmd = getpath(&bufCommand, argv);
+	cmd = getpath(&bufCommand);
 	argv[0] = cmd == NULL ? strdup(argv[0]) : cmd;
 	return (argv);
 }
