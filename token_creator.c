@@ -23,9 +23,12 @@ char **token_creator(char *bufCommand, char **argv)
 	token = strtok(bufCommand, " \n");
 	while (token != NULL)
 	{
-		argv[i] = token;
-		token = strtok(NULL, " \n");
-		i++;
+		if (token > 0)
+		{
+			argv[i] = token;
+			token = strtok(NULL, " \n");
+			i++;
+		}
 	}
 	argv[i] = NULL;
 

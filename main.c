@@ -45,8 +45,9 @@ int main(int argc, char **argv, char **envp)
 				printf("\n");
 			break;
 		}
-		if (strcmp(buffer, "exit\n") == 0 || buffer[0] == ' ')
-		{
+		if (strcmp(buffer, "exit\n") == 0 ||
+				(strlen(buffer) == 2 && buffer[0] == ' '))
+				{
 			/*printf("%s", buffer);*/
 			break;
 		}
