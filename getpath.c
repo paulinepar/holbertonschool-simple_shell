@@ -13,7 +13,7 @@
  * Description: it get the absolute path of a function
  * Return: the path of a function
  */
-char *getpath(char **bufCommand, char **argv)
+char *getpath(char **bufCommand)
 {
 	char *path = NULL;
 	char *token = NULL;
@@ -28,11 +28,14 @@ char *getpath(char **bufCommand, char **argv)
 	token = strtok(env, ":");
 	while (token)
 	{
-		// putting one of the pathes in the path
+		/* putting one of the pathes in the path
+		 */
 		strcpy(path, token);
-		// adding slash for creating a new path
+		/* adding slash for creating a new path
+		 */
 		strcat(path, "/");
-		// here it's ls
+		/* here it's ls
+		 */
 		strcat(path, bufCommand[0]);
 
 		if (stat(path, &st) == 0)
