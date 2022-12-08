@@ -19,7 +19,7 @@ char *getpath(char **bufCommand)
 
 	env = strdup(getenv("PATH"));
 	if (env == NULL)
-		return (bufCommand);
+		return (*bufCommand);
 	token = strtok(env, ":");
 	while (token)
 	{
