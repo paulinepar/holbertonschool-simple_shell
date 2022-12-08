@@ -30,10 +30,12 @@ void execute_funk(char **argv, char **argenv)
 		 */
 
 
-		if (argv[0][0] != '/' && argv[0][0] != '.')
-			printf("%s: command not found", argv[0]);
-		else
-			perror(argv[0]);
+		/**
+		 * if (argv[0][0] != '/' && argv[0][0] != '.')
+		 * printf("%s: command not found", argv[0]);
+		 * else
+		 */
+		perror(argv[0]);
 		exit(1);
 	}
 

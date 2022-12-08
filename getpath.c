@@ -37,8 +37,10 @@ char *getpath(char **bufCommand)
 			bufCommand[0] = path;
 			return (path);
 		}
-		else
-			perror(bufCommand[0]);
+	/**
+	 * else
+	 *	perror(bufCommand[0]);
+	 */
 
 		token = strtok(NULL, ":");
 	}
