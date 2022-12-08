@@ -1,10 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/wait.h>
 #include "shell.h"
 /**
  * execute_funk - a function
@@ -35,11 +28,14 @@ void execute_funk(char **argv, char **argenv)
 		 * i added this part in order to printout
 		 * error messages and exit the process
 		 */
-		if (argv[0][0] != '/' && argv[0][0] != '.')
-			printf("%s: command not found\n", argv[0]);
-		else
-			perror(argv[0]);
-		exit(1);
+	/**
+	 * if (argv[0][0] != '/' && argv[0][0] != '.')
+	 * printf("%s: command not found\n", argv[0]);
+	 * else
+	 * perror(argv[0]);
+	 * exit(1);
+		*/
+		perror(argv[0]);
 	}
 
 	else
