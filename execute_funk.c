@@ -28,14 +28,12 @@ void execute_funk(char **argv, char **argenv)
 		 * i added this part in order to printout
 		 * error messages and exit the process
 		 */
-	/**
-	 * if (argv[0][0] != '/' && argv[0][0] != '.')
-	 * printf("%s: command not found\n", argv[0]);
-	 * else
-	 * perror(argv[0]);
-	 * exit(1);
-		*/
-		perror(argv[0]);
+
+		if (argv[0][0] != '/' && argv[0][0] != '.')
+			perror(argv[0]);
+		else
+			perror(argv[0]);
+		exit(1);
 	}
 
 	else
