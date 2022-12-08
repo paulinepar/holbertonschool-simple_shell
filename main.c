@@ -1,5 +1,25 @@
 #include "shell.h"
 /**
+ * print_env - function
+ * @envp: environment
+ *
+ * Description: a function that prints the current environment
+ * Return: 1
+ */
+int print_env(char **envp)
+{
+	int i;
+
+	i = 0;
+
+	if (envp != NULL)
+	{
+		for (i = 0; envp[i]; i++)
+			printf("%s\n", envp[i]);
+	}
+	return (1);
+}
+/**
  * main - function
  * @argc: the number of argument passed => argc is not used
  * @argv: an arriay of all the argument passed
@@ -33,6 +53,9 @@ int main(int argc, char **argv, char **envp)
 		}
 		if (strcmp(buffer, "exit\n") == 0)
 			break;
+		else if (strcmp(buffer, "env\n") == 0)
+			print_env(envp);
+		else
 		token_creator(buffer, argv);
 		if (argv[0] != NULL)
 		{
