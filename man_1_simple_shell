@@ -20,7 +20,9 @@ Once a user inputs a command and hits enter, the shell performs the following ac
 
 2. Looks for the command.
 
-3. Executes the command.
+3.a. If a built-in command find : executes the command.
+3.b. If no command is find : returns an error message and print a new line.
+
 
 .SH SEARCH FOR COMMAND
 When locating a command, the shell looks for a built-in command by that name.
@@ -30,30 +32,52 @@ If a built-in command is not found, the shell searches for the command in the PA
 Commands are executed in a child process of the main process.
 
 .SH BUILTINS
+
+.IP cd
+Switch to the specified directory.
+.IP echo
+Print the arguments on the standard output.
 .IP exit
 Exits the simple_shell.
+.IP ls
+List information about the current directory's files, sort entries alphabetically.
+
+-l      use a long listing format.
+.IP pwd
+Prints the path of the current directory.
+
+And plentyother built in command already include in the Shell.
+
 .SH AUTHORS
 This man page was written by :
 
- Pauline <>
- Mohamed <>
- Marine <>
+ Pauline <pauline.parmigiani@holbertonstudents.com>
+ Mohamed <mohamad.al-annan@holbertonstudents.com>
+ Marine <marine.dehaye@holbertonstudents.com>
 
 .SH SEE ALSO
 .BR man
 .BR sh
 .SH REPORTING BUGS
-Try again our
+First of all, please take a minute to admire this hardwork and feel grateful to have the luck to experience the work of three newbies full of motivation :
+.B HALLELUJIA 
+!!
+
+Secondly if any problems show up : try again our
 .B simple_shell
-is perfect.
+is made with the last drop of vital energy.
 
 If you have any other problem do not hesitate to use the
 .B real shell
 !
 .SH DEDICATION
 
-A word for our amazing collaborator
-.B GITHUB: Love you forever Bro!
+From Pauline : love you my dear emotional support cat ! xoxo
 
-Thanks also to all the holbies who support us in the best and the worst days!
-.B XOXO
+From Mohamad: to our dear Julien you've been challenging, we will remenber it........
+
+From Marine : To Pêché Mignon our official chocolatine supplier, thanks for being here during the though times. Love you <3
+
+And finally, thanks to all the members of this group, this was a big challenge for us but we made it and kept our smiles and our kindness to each other till the end. 
+
+.B XOXO Holbies ;)
