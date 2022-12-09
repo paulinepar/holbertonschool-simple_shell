@@ -108,7 +108,7 @@ compile:
 execution: `./nameofthescript`.
  
 ## 📖MAN PAGE:
-execution: `man ./man_1_simple_shell`
+execution: `man ./man_1_simple_shell`.
 
 ![image](https://zupimages.net/up/22/49/2auu.png)
 
