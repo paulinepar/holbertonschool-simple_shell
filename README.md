@@ -14,75 +14,111 @@ Shell is the command line interpreter, it allows a user to identify himself on a
 
 ## 📜Task 0:
 
-| description        |                                                                 |
+| description        |   Write a README, AUTHORS and  MAN.                                                       |
 | ----------------- | ------------------------------------------------------------------ |
 |README| description of the our project.
-|AUTHORS| contributors (view file)
-|MAN| 
+|AUTHORS| contributors (view file).
+|MAN| shell description.
 
 ## 📜Task 1:
-
-| CS           | description                                                                |
+| description        |  Write beautiful code that passes with Betty checks.   
 | ----------------- | ------------------------------------------------------------------ |
-|Write beautiful code that passes with Betty checks.
+|| check that your code is no problem with Betty.
 
 ## 📜Task 2:
 
-| CS           | description                                                                |
+|   description     |  Write a UNIX command line interpreter.                                                              |
 | ----------------- | ------------------------------------------------------------------ |
-|Write a UNIX command line interpreter.
+| Your Shell should | Display a prompt and wait for the user to type a command. A command line always ends with a new line.  |
+|| The prompt is displayed again each time a command has been executed.
+|| The command lines are simple, no semicolons, no pipes, no redirections or any other advanced features.
+|| The command lines are made only of one word. No arguments will be passed to programs.
+|| If an executable cannot be found, print an error message and display the prompt again.
+|| Handle errors.
+|| You have to handle the “end of file” condition `(Ctrl+D)`.
 
 ## 📜Task 3:
-
-| CS           | description                                                                |
+|   description     |  Simple shell 0.1 +                                                                    |
 | ----------------- | ------------------------------------------------------------------ |
+|| Handle command lines with arguments.
 
 ## 📜Task 4:
 
-| CS           | description                                                                |
+| description           |  Simple shell 0.2 +                                                           |
 | ----------------- | ------------------------------------------------------------------ |
+|| Handle the `PATH`
+|| `fork` must not be called if the command doesn’t exist
 
 ## 📜Task 5:
 
-| CS           | description                                                                |
+| description           |  Simple shell 0.3 +                                                               |
 | ----------------- | ------------------------------------------------------------------ |
+|| Implement the `exit` built-in, that exits the shell
+|| Usage: `exit`
+|| You don’t have to handle any argument to the built-in `exit`
 
 ## 📜Task 6:
 
-| CS           | description                                                                |
+| description           |  Simple shell 0.4 +                                                            |
 | ----------------- | ------------------------------------------------------------------ |
+|| Implement the `env` **built-in**, that prints the current environment
+
 
 ## 📝Files description:
 
 | files names             | description                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-|token_creator.c|
-|execute_funk.c|
-|getpath.c|
-|main.c|
-|shell.h|
+|token_creator.c| Analyse each commands from the buffer.
+|execute_funk.c| Execute the command that are analysed by the token_creator function.
+|getpath.c| retrieve the path and it concatenate the command to the path.
+|main.c| it's a main.
+|shell.h| it's a file containing the prototypes of all the function.
+|print_env|
 
-#### 📃EXAMPLES:
+#### 📃EXAMPLES IN INTERACTIVE MODE:
+In a script / program:  
+
+`$ ./hsh`  
+`($) /bin/ls`  
+`hsh main.c shell.c`  
+`($)`  
+`($) exit`    
+`$` 
+
+#### 📃EXAMPLES IN NON INTERACTIVE MODE:
+In a script / program:  
+
+`$ echo "/bin/ls" | ./hsh`  
+`hsh main.c shell.c test_ls_2`  
+`$`  
+`$ cat test_ls_2`  
+`/bin/ls`  
+`/bin/ls`  
+`$`  
+`$ cat test_ls_2 | ./hsh`  
+`hsh main.c shell.c test_ls_2`  
+`hsh main.c shell.c test_ls_2`  
+`$`  
 
 #### 📃COMPILATION:
 compile:
-`gcc -Wall -Werror -Wextra -pedantic *.c -o nameofthescript`
+`gcc -Wall -Werror -Wextra -pedantic *.c -o nameofthescript`  
 execution: `./nameofthescript`
  
-### |Man Page:
+## 📖MAN PAGE:
 execution: `man ./man_1_simple_shell`
 
 ![image](https://zupimages.net/up/22/49/2auu.png)
 
 ## 🗓ORGANISATION:
 
-- TRELLO :
+- TRELLO :  
   https://trello.com/b/bWNX1UKm/shell
 
 - Diagrams link:  
   https://app.diagrams.net/#G1MGgbXYgmWPvQRQCVN_7jR_iI9OMvLKGT
 
-### ✍ |AUTHOR: 
+### ✍ AUTHOR: 
 🔸Marine Dehaye
 [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/marine-dehaye-9a5b39127/?originalSubdomain=fr)
 
@@ -92,6 +128,6 @@ execution: `man ./man_1_simple_shell`
 🔸Pauline Parmigiani
 [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/pauline-parmigiani-36384017b/?originalSubdomain=fr)
 
-### 🎓 |SCHOOL:
+### 🎓 SCHOOL:
 Holberton School - TOULOUSE
 C19 cohort
