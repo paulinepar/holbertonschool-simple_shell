@@ -18,6 +18,8 @@ char *getpath(char **bufCommand)
 		exit(0);
 
 	env = strdup(getenv("PATH"));
+	if (env == NULL)
+		return (*bufCommand);
 	token = strtok(env, ":");
 	while (token)
 	{
@@ -28,6 +30,7 @@ char *getpath(char **bufCommand)
 		/**
 		 * adding slash for creating a new path
 		 */
+
 		strcat(path, "/");
 		strcat(path, bufCommand[0]);
 

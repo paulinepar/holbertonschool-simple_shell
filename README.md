@@ -3,34 +3,64 @@ Holberton school Toulouse | C19
 
 ## 📝DESCRIPTION:
 
-What is a shell in computing?
+Write a UNIX command line interpreter.
 
-Image search result for "simple shell description
-Shell is the command line interpreter, it allows a user to identify himself on a console or terminal. It provides a number of commands to interact with the operating system
+What is a shell in computing ?
+Shell is the command line interpreter, it allows a user to identify himself on a console or terminal. It provides a number of commands to interact with the operating system.
 
 ## 📝PROTOTYPE:
 
+![image](https://zupimages.net/up/22/49/5mj8.png)
 
-## 📝CONVERSION SPECIFIERS - CS:
+## 📜Task 0:
 
-## 🔶Task 0:
+| description        |                                                                 |
+| ----------------- | ------------------------------------------------------------------ |
+|README| description of the our project.
+|AUTHORS| contributors (view file)
+|MAN| 
 
-## 🔶Task 1:
+## 📜Task 1:
 
-## 🔶Task 2:
+| CS           | description                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+|Write beautiful code that passes with Betty checks.
 
-## 🔶Task 3:
+## 📜Task 2:
 
-## 🔶Task 4:
+| CS           | description                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+|Write a UNIX command line interpreter.
 
-## 🔶Task 5:
+## 📜Task 3:
 
-## 🔶Task 6:
+| CS           | description                                                                |
+| ----------------- | ------------------------------------------------------------------ |
 
-#### ✏Notes:
-Right now the program doesnt count all the conversion specifiers
+## 📜Task 4:
+
+| CS           | description                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+
+## 📜Task 5:
+
+| CS           | description                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+
+## 📜Task 6:
+
+| CS           | description                                                                |
+| ----------------- | ------------------------------------------------------------------ |
 
 ## 📝Files description:
+
+| files names             | description                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+|token_creator.c|
+|execute_funk.c|
+|getpath.c|
+|main.c|
+|shell.h|
 
 #### 📃EXAMPLES:
 
@@ -39,11 +69,10 @@ compile:
 `gcc -Wall -Werror -Wextra -pedantic *.c -o nameofthescript`
 execution: `./nameofthescript`
  
-
 ### |Man Page:
-execution: `man ./man_3_printf`
+execution: `man ./man_1_simple_shell`
 
-![image]()
+![image](https://zupimages.net/up/22/49/2auu.png)
 
 ## 🗓ORGANISATION:
 
@@ -61,7 +90,7 @@ execution: `man ./man_3_printf`
 [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/mohamad-al-annan-325b0776/?originalSubdomain=lb)
 
 🔸Pauline Parmigiani
-[![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/
+[![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/pauline-parmigiani-36384017b/?originalSubdomain=fr)
 
 ### 🎓 |SCHOOL:
 Holberton School - TOULOUSE
