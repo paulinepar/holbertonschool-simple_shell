@@ -1,14 +1,5 @@
 #include "shell.h"
 /**
- * exit_funk - function
- * Description: a function that exits
- * Return: void
- */
-int exit_funk(void)
-{
-	exit(2);
-}
-/**
  * execute_funk - a function
  * @argv: it is the return value of function token_creator
  * @argenv: is the current environment
@@ -45,7 +36,7 @@ void execute_funk(char **argv, char **argenv)
 		 * else
 		 */
 		perror(argv[0]);
-		exit_funk();
+		exit(2);
 	}
 
 	else
