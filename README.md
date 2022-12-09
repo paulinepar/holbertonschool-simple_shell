@@ -1,5 +1,5 @@
 # C - Simple Shell project:
-Holberton school Toulouse #C19
+Holberton school Toulouse  #C19
 
 ## 📝DESCRIPTION:
 
