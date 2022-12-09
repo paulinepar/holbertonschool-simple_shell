@@ -1,19 +1,5 @@
 #include "shell.h"
 /**
- * exit_funk - function
- * @buffer: argument1
- * @argument: argument2
- * Description: a function that exit
- * Return: void
- */
-int exit_funk(char *buffer, char **argument)
-{
-	exit(2);
-	free(buffer);
-	free(argument);
-}
-
-/**
  * print_env - function
  * @envp: environment
  * Description: a function that prints the current environment
@@ -63,6 +49,8 @@ int main(int argc, char **argv, char **envp)
 				printf("\n");
 			break;
 		}
+		if (strcmp(buffer, "exit\n") == 0)
+			break;
 		else if (strcmp(buffer, "env\n") == 0)
 			print_env(envp);
 		else
@@ -70,9 +58,6 @@ int main(int argc, char **argv, char **envp)
 		if (argument[0] != NULL)
 		{
 			execute_funk(argument, envp);
-			if (strcmp(buffer, "exit\n") == 0)
-				break;
-			exit_funk(buffer, argument);
 			free(argument[0]);
 			argument[0] = NULL;
 		}
