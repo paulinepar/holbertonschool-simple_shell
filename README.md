@@ -104,11 +104,11 @@ In a script / program:
 #### 📃COMPILATION:
 
 compile:
-`gcc -Wall -Werror -Wextra -pedantic *.c -o nameofthescript`  .
-execution: `./nameofthescript`.
+`gcc -Wall -Werror -Wextra -pedantic *.c -o nameofthescript`  
+execution: `./nameofthescript`
  
 ## 📖MAN PAGE:
-execution: `man ./man_1_simple_shell`.
+execution: `man ./man_1_simple_shell`
 
 ![image](https://zupimages.net/up/22/49/2auu.png)
 
