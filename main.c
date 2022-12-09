@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * print_env - function
  * @envp: environment
@@ -62,6 +61,7 @@ int main(int argc, char **argv, char **envp)
 			free(argument[0]);
 			argument[0] = NULL;
 		}
+
 	}
 	free(buffer);
 	free(argument);
