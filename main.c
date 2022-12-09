@@ -61,6 +61,8 @@ int main(int argc, char **argv, char **envp)
 				printf("\n");
 			break;
 		}
+		if ((strlen(buffer) == 6) && (strcmp(buffer, "exit\n") == 0))
+			break;
 		if (strcmp(buffer, "exit\n") == 0)
 		{
 			free(buffer);
