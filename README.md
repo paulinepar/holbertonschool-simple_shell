@@ -102,6 +102,7 @@ In a script / program:
 `$`  
 
 #### 📃COMPILATION:
+
 compile:
 `gcc -Wall -Werror -Wextra -pedantic *.c -o nameofthescript`  
 execution: `./nameofthescript`
@@ -130,5 +131,6 @@ execution: `man ./man_1_simple_shell`
 [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/pauline-parmigiani-36384017b/?originalSubdomain=fr)
 
 ### 🎓 SCHOOL:
+
 Holberton School - TOULOUSE
 C19 cohort
