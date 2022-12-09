@@ -104,7 +104,7 @@ In a script / program:
 #### 📃COMPILATION:
 
 compile:
-`gcc -Wall -Werror -Wextra -pedantic *.c -o nameofthescript`  
+`gcc -Wall -Werror -Wextra -pedantic *.c -o nameofthescript`  .
 execution: `./nameofthescript`.
  
 ## 📖MAN PAGE:
