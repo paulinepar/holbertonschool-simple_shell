@@ -1,18 +1,8 @@
 #include "shell.h"
-/**
- * exit_funk - function
- * Description: a function that exits
- * Return: void
- */
-int exit_funk(void)
-{
-	exit(2);
-}
 
 /**
  * print_env - function
  * @envp: environment
- *
  * Description: a function that prints the current environment
  * Return: 1
  */
@@ -34,7 +24,6 @@ int print_env(char **envp)
  * @argc: the number of argument passed => argc is not used
  * @argv: an arriay of all the argument passed
  * @envp: the current environment
- *
  * Description: it will keep accepting input from buffer
  * Return: 0 upon sucess
  */
@@ -42,9 +31,8 @@ int main(int argc, char **argv, char **envp)
 {
 	char *buffer = NULL;
 	size_t bufsize = 0;
-	char *argument = NULL;
-
-	(void)argc;
+	char **argument = NULL;
+	(void)argc, (void)argv;
 	argument = calloc(sizeof(char *), 1024);
 	if (argument == NULL)
 	{
@@ -62,26 +50,20 @@ int main(int argc, char **argv, char **envp)
 				printf("\n");
 			break;
 		}
-		if ((strlen(buffer) == 6) && (strcmp(buffer, "exit\n") == 0))
-			break;
 		if (strcmp(buffer, "exit\n") == 0)
-		{
-			free(buffer);
-			free(argv);
-			exit_funk();
-
-		}
+			break;
 		else if (strcmp(buffer, "env\n") == 0)
 			print_env(envp);
 		else
-		token_creator(buffer, argv);
-		if (argv[0] != NULL)
+		token_creator(buffer, argument);
+		if (argument[0] != NULL)
 		{
-			execute_funk(argv, envp);
-			free(argv[0]);
+			execute_funk(argument, envp);
+			free(argument[0]);
+			argument[0] = NULL;
 		}
 	}
 	free(buffer);
-	free(argv);
+	free(argument);
 	return (0);
 }
