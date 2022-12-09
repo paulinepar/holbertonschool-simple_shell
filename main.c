@@ -63,8 +63,6 @@ int main(int argc, char **argv, char **envp)
 				printf("\n");
 			break;
 		}
-		if (strcmp(buffer, "exit\n") == 0)
-			break;
 		else if (strcmp(buffer, "env\n") == 0)
 			print_env(envp);
 		else
@@ -74,9 +72,10 @@ int main(int argc, char **argv, char **envp)
 			execute_funk(argument, envp);
 			free(argument[0]);
 			argument[0] = NULL;
-		}
-		else
+			if (strcmp(buffer, "exit\n") == 0)
+				break;
 			exit_funk(buffer, argument);
+		}
 
 	}
 	free(buffer);
