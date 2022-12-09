@@ -73,7 +73,6 @@ Shell is the command line interpreter, it allows a user to identify himself on a
 |getpath.c| retrieve the path and it concatenate the command to the path.
 |main.c| it's a main.
 |shell.h| it's a file containing the prototypes of all the function.
-|print_env|
 
 #### 📃EXAMPLES IN INTERACTIVE MODE:
 In a script / program:  
@@ -118,7 +117,7 @@ execution: `man ./man_1_simple_shell`
 - Diagrams link:  
   https://app.diagrams.net/#G1MGgbXYgmWPvQRQCVN_7jR_iI9OMvLKGT
 
-### ✍ AUTHOR: 
+### ✍ AUTHORS: 
 🔸Marine Dehaye
 [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/marine-dehaye-9a5b39127/?originalSubdomain=fr)
 
