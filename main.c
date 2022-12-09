@@ -1,4 +1,17 @@
 #include "shell.h"
+/**
+ * exit_funk - function
+ * @buffer: argument1
+ * @argument: argument2
+ * Description: a function that exit
+ * Return: void
+ */
+int exit_funk(char *buffer, char **argument)
+{
+	exit(2);
+	free(buffer);
+	free(argument);
+}
 
 /**
  * print_env - function
@@ -62,6 +75,9 @@ int main(int argc, char **argv, char **envp)
 			free(argument[0]);
 			argument[0] = NULL;
 		}
+		else
+			exit_funk(buffer, argument);
+
 	}
 	free(buffer);
 	free(argument);
