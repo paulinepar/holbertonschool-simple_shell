@@ -70,11 +70,11 @@ int main(int argc, char **argv, char **envp)
 		if (argument[0] != NULL)
 		{
 			execute_funk(argument, envp);
-			free(argument[0]);
-			argument[0] = NULL;
 			if (strcmp(buffer, "exit\n") == 0)
 				break;
 			exit_funk(buffer, argument);
+			free(argument[0]);
+			argument[0] = NULL;
 		}
 
 	}
