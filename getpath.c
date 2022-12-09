@@ -30,10 +30,8 @@ char *getpath(char **bufCommand)
 		/**
 		 * adding slash for creating a new path
 		 */
-
 		strcat(path, "/");
 		strcat(path, bufCommand[0]);
-
 		if (stat(path, &st) == 0)
 		{
 			free(env);
@@ -44,12 +42,9 @@ char *getpath(char **bufCommand)
 	 * else
 	 *	perror(bufCommand[0]);
 	 */
-
 		token = strtok(NULL, ":");
 	}
-
 	free(path);
 	free(env);
 	return (NULL);
 }
-
