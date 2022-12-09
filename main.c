@@ -1,5 +1,15 @@
 #include "shell.h"
 /**
+ * exit_funk - function
+ * Description: a function that exits
+ * Return: void
+ */
+int exit_funk(void)
+{
+	exit(2);
+}
+
+/**
  * print_env - function
  * @envp: environment
  *
@@ -52,7 +62,12 @@ int main(int argc, char **argv, char **envp)
 			break;
 		}
 		if (strcmp(buffer, "exit\n") == 0)
-			break;
+		{
+			free(buffer);
+			free(argv);
+			exit_funk();
+
+		}
 		else if (strcmp(buffer, "env\n") == 0)
 			print_env(envp);
 		else
