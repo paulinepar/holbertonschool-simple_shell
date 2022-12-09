@@ -21,6 +21,7 @@ Shell is the command line interpreter, it allows a user to identify himself on a
 |MAN| shell description.
 
 ## 📜Task 1:
+
 | description        |  Write beautiful code that passes with Betty checks.   
 | ----------------- | ------------------------------------------------------------------ |
 || check that your code is no problem with Betty.
@@ -38,6 +39,7 @@ Shell is the command line interpreter, it allows a user to identify himself on a
 || You have to handle the “end of file” condition `(Ctrl+D)`.
 
 ## 📜Task 3:
+
 |   description     |  Simple shell 0.1 +                                                                    |
 | ----------------- | ------------------------------------------------------------------ |
 || Handle command lines with arguments.
