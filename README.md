@@ -105,7 +105,7 @@ In a script / program:
 
 compile:
 `gcc -Wall -Werror -Wextra -pedantic *.c -o nameofthescript`  
-execution: `./nameofthescript`
+execution: `./nameofthescript`.
  
 ## 📖MAN PAGE:
 execution: `man ./man_1_simple_shell`
