@@ -42,10 +42,11 @@ int main(int argc, char **argv, char **envp)
 {
 	char *buffer = NULL;
 	size_t bufsize = 0;
+	char *argument = NULL;
 
 	(void)argc;
-	argv = calloc(sizeof(char *), 1024);
-	if (argv == NULL)
+	argument = calloc(sizeof(char *), 1024);
+	if (argument == NULL)
 	{
 		perror("Unable to allocate buffer");
 		exit(1);
